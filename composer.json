@@ -1,0 +1,50 @@
+{
+    "name": "iaipes/apiclient",
+    "description": "REST client for the IAIP API",
+    "license": "license",
+    "authors": [
+        {
+            "name": "IAIP",
+            "email": "info@iaip.gob.sv",
+            "homepage": "https://github.com/iaipes/api-client-php"
+        },
+        {
+            "name": "Emilio Forrer",
+            "email": "emilio@ideaworks.la",
+            "homepage": "http://ideaworks.la",
+            "role": "Developer"
+        }
+    ],
+    "homepage": "https://github.com/iaipes/api-client-php",
+    "keywords": ["Laravel", "ApiClient"],
+    "require": {
+        "illuminate/support": "~5",
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~7.0",
+        "mockery/mockery": "^1.1",
+        "orchestra/testbench": "~3.0",
+        "sempro/phpunit-pretty-print": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Iaipes\\ApiClient\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Iaipes\\ApiClient\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Iaipes\\ApiClient\\ApiClientServiceProvider"
+            ],
+            "aliases": {
+                "ApiClient": "Iaipes\\ApiClient\\Facades\\ApiClient"
+            }
+        }
+    }
+}
