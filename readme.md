@@ -11,9 +11,9 @@ Client for the  REST API at [developers portal](http://developers.iaip.iw.sv/doc
 
 ## Dependencies
 
-* (illuminate/support)[https://github.com/illuminate/support]
-* (guzzlehttp/guzzle)[https://github.com/guzzle/guzzle]
-* (vlucas/phpdotenv)[https://github.com/vlucas/phpdotenv]
+* [illuminate/support](https://github.com/illuminate/support)
+* [guzzlehttp/guzzle](https://github.com/guzzle/guzzle)
+* [vlucas/phpdotenv](https://github.com/vlucas/phpdotenv)
 
 ## Installation
 
@@ -49,8 +49,14 @@ IAIPES_API_TIMEOUT=10
 ### PHP 
 
 ```php
+// Load dotenv if you have not (Not necessary in Laravel)
+$dotenv = new Dotenv\Dotenv(__DIR__);
+$dotenv->load();
+
 use Iaipes\ApiClient\Http\Client\Api\V1\InformationRequestClient;
+
 $client = new InformationRequestClient;
+
 $response = $client->index([
         'include' => 'institution',
         'filter' => [
