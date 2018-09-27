@@ -31,10 +31,10 @@ class ApiClientServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/iaip_apiclient.php', 'iaip_apiclient');
+        $this->mergeConfigFrom(__DIR__.'/../config/iaipes_apiclient.php', 'iaipes_apiclient');
 
         // Register the service the package provides.
-        // $this->app->singleton('iaip_apiclient', function ($app) {
+        // $this->app->singleton('iaipes_apiclient', function ($app) {
         //     return new ApiClient;
         // });
     }
@@ -58,23 +58,23 @@ class ApiClientServiceProvider extends ServiceProvider
     {
         // Publishing the configuration file.
         $this->publishes([
-            __DIR__.'/../config/iaip_apiclient.php' => config_path('iaip_apiclient.php'),
-        ], 'iaip_apiclient.config');
+            __DIR__.'/../config/iaipes_apiclient.php' => config_path('iaipes_apiclient.php'),
+        ], 'iaipes_apiclient.config');
 
         // Publishing the views.
         /*$this->publishes([
             __DIR__.'/../resources/views' => base_path('resources/views/vendor/iaipes'),
-        ], 'iaip_apiclient.views');*/
+        ], 'iaipes_apiclient.views');*/
 
         // Publishing assets.
         /*$this->publishes([
             __DIR__.'/../resources/assets' => public_path('vendor/iaipes'),
-        ], 'iaip_apiclient.views');*/
+        ], 'iaipes_apiclient.views');*/
 
         // Publishing the translation files.
         /*$this->publishes([
             __DIR__.'/../resources/lang' => resource_path('lang/vendor/iaipes'),
-        ], 'iaip_apiclient.views');*/
+        ], 'iaipes_apiclient.views');*/
 
         // Registering package commands.
         // $this->commands([]);

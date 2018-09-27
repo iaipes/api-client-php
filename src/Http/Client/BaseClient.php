@@ -1,6 +1,6 @@
 <?php
 
-namespace Iaip\ApiClient\Http\Client;
+namespace Iaipes\ApiClient\Http\Client;
 
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Log;
@@ -11,9 +11,10 @@ class BaseClient
 {
     public function __construct($options = [])
     {
-        $token = function_exists('config') ? config("iaip_apiclient.token", "") : getenv('IAIP_API_TOKEN');
-        $base_uri = function_exists('config') ? config("iaip_apiclient.url", "") : getenv('IAIP_API_URL');
-        $timeout = function_exists('config') ? config("iaip_apiclient.timeout", "") : getenv('IAIP_API_TIMEOUT');
+        $token = function_exists('config') ? config("iaipes_apiclient.token", "") : getenv('IAIP_API_TOKEN');
+        $base_uri = function_exists('config') ? config("iaipes_apiclient.url", "") : getenv('IAIP_API_URL');
+        $timeout = function_exists('config') ? config("iaipes_apiclient.timeout", "") : getenv('IAIP_API_TIMEOUT');
+        $timeout = empty($timeout) ? 60 : $timeout;
 
         $this->settings = array_merge([
             "token"  => $token,
