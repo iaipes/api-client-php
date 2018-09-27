@@ -3,7 +3,10 @@
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Total Downloads][ico-downloads]][link-downloads]
 
-This is where your description should go. Take a look at [contributing.md](contributing.md) to see a to do list.
+
+Client for the  REST API at [developers portal](http://developers.iaip.iw.sv/docs) of IAIP.
+
+**Note:** This package is **under development** and **should not be used in production sites**, until version **1.0.0 or above** is released.
 
 ## Installation
 
@@ -13,7 +16,44 @@ Via Composer
 $ composer require iaipes/apiclient
 ```
 
+
+### Configuration
+
+#### Laravel
+
+Publish configuration
+
+```bash
+php artisan vendor:publish --provider aipes\ApiClient\ApiClientServiceProvider
+```
+
+Configure the next variables in you `.env` file:
+
+```bash
+IAIPES_API_TOKEN={token}
+IAIPES_API_URL=http://developers.iaip.iw.sv
+IAIPES_API_TIMEOUT=10
+```
+
+**Note:** replace `{token}` with your developer access token.
+
 ## Usage
+
+### PHP 
+
+```php
+use Iaipes\ApiClient\Http\Client\Api\V1\InformationRequestClient;
+$client = new InformationRequestClient;
+$response = $client->index([
+        'include' => 'institution',
+        'filter' => [
+            'profession_cont' => 'Desarrollador'
+        ],
+        'sort' => 'created_at desc'
+    ]);
+```
+
+**Note:** For more information about classes and methods, please check the [documentation](http://developers.iaip.iw.sv/docs)
 
 ## Change log
 

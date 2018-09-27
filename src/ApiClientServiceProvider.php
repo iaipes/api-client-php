@@ -4,6 +4,11 @@ namespace Iaipes\ApiClient;
 
 use Illuminate\Support\ServiceProvider;
 
+use Iaipes\ApiClient\Http\Client\Api\V1\InformationRequestClient;
+use Iaipes\ApiClient\Http\Client\Api\V1\TrainingRequestClient;
+
+
+
 class ApiClientServiceProvider extends ServiceProvider
 {
     /**
@@ -31,12 +36,18 @@ class ApiClientServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/apiclient.php', 'apiclient');
+        $this->mergeConfigFrom(__DIR__.'/../config/iaipes_apiclient.php', 'iaipes_apiclient');
 
         // Register the service the package provides.
-        $this->app->singleton('apiclient', function ($app) {
-            return new ApiClient;
-        });
+        
+        // $this->app->singleton('Iaip\Api\V1\InformationRequest', function ($app) {
+        //     return new InformationRequestClient;
+        // });
+
+        // $this->app->singleton('Iaip\Api\V1\TrainingRequest', function ($app) {
+        //     return new TrainingRequestClient;
+        // });
+
     }
 
     /**
@@ -46,7 +57,7 @@ class ApiClientServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return ['apiclient'];
+        return [];
     }
     
     /**
@@ -58,23 +69,23 @@ class ApiClientServiceProvider extends ServiceProvider
     {
         // Publishing the configuration file.
         $this->publishes([
-            __DIR__.'/../config/apiclient.php' => config_path('apiclient.php'),
-        ], 'apiclient.config');
+            __DIR__.'/../config/iaipes_apiclient.php' => config_path('iaipes_apiclient.php'),
+        ], 'iaipes_apiclient.config');
 
         // Publishing the views.
         /*$this->publishes([
             __DIR__.'/../resources/views' => base_path('resources/views/vendor/iaipes'),
-        ], 'apiclient.views');*/
+        ], 'iaipes_apiclient.views');*/
 
         // Publishing assets.
         /*$this->publishes([
             __DIR__.'/../resources/assets' => public_path('vendor/iaipes'),
-        ], 'apiclient.views');*/
+        ], 'iaipes_apiclient.views');*/
 
         // Publishing the translation files.
         /*$this->publishes([
             __DIR__.'/../resources/lang' => resource_path('lang/vendor/iaipes'),
-        ], 'apiclient.views');*/
+        ], 'iaipes_apiclient.views');*/
 
         // Registering package commands.
         // $this->commands([]);
