@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to `core` will be documented in this file.
+All notable changes to `apiclient` will be documented in this file.
 
 Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
 
@@ -9,3 +9,5 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 ### Added
 - Everything, initial release
+- Information requests endpoint
+- Training requests endpoint
