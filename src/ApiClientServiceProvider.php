@@ -4,6 +4,11 @@ namespace Iaipes\ApiClient;
 
 use Illuminate\Support\ServiceProvider;
 
+use Iaipes\ApiClient\Http\Client\Api\V1\InformationRequestClient;
+use Iaipes\ApiClient\Http\Client\Api\V1\TrainingRequestClient;
+
+
+
 class ApiClientServiceProvider extends ServiceProvider
 {
     /**
@@ -34,9 +39,15 @@ class ApiClientServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(__DIR__.'/../config/iaipes_apiclient.php', 'iaipes_apiclient');
 
         // Register the service the package provides.
-        // $this->app->singleton('iaipes_apiclient', function ($app) {
-        //     return new ApiClient;
+        
+        // $this->app->singleton('Iaip\Api\V1\InformationRequest', function ($app) {
+        //     return new InformationRequestClient;
         // });
+
+        // $this->app->singleton('Iaip\Api\V1\TrainingRequest', function ($app) {
+        //     return new TrainingRequestClient;
+        // });
+
     }
 
     /**

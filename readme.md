@@ -3,7 +3,8 @@
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Total Downloads][ico-downloads]][link-downloads]
 
-This is where your description should go. Take a look at [contributing.md](contributing.md) to see a to do list.
+Client for the  REST API at [developers portal](http://developers.iaip.iw.sv/docs) of IAIP
+
 
 ## Installation
 
@@ -13,7 +14,31 @@ Via Composer
 $ composer require iaipes/apiclient
 ```
 
+### Laravel
+
+Publish configuration
+
+```bash
+php artisan vendor:publish --provider aipes\ApiClient\ApiClientServiceProvider
+```
+
 ## Usage
+
+### PHP 
+
+```php
+use Iaipes\ApiClient\Http\Client\Api\V1\InformationRequestClient;
+$client = new InformationRequestClient;
+$response = $client->index([
+        'include' => 'institution',
+        'filter' => [
+            'profession_cont' => 'Desarrollador'
+        ],
+        'sort' => 'created_at desc'
+    ]);
+```
+
+**Note:** For more information about classes and methods, please check the [documentation](http://developers.iaip.iw.sv/docs)
 
 ## Change log
 
