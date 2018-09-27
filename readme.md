@@ -8,6 +8,13 @@ Client for the  REST API at [developers portal](http://developers.iaip.iw.sv/doc
 
 **Note:** This package is **under development** and **should not be used in production sites**, until version **1.0.0 or above** is released.
 
+
+## Dependencies
+
+* (illuminate/support)[https://github.com/illuminate/support]
+* (guzzlehttp/guzzle)[https://github.com/guzzle/guzzle]
+* (vlucas/phpdotenv)[https://github.com/vlucas/phpdotenv]
+
 ## Installation
 
 Via Composer
@@ -60,6 +67,17 @@ $response = $client->index([
 Please see the [changelog](changelog.md) for more information on what has changed recently.
 
 ## Testing
+
+Create a `.dot`  file inside the `tests` folder
+
+``` bash
+IAIPES_API_TOKEN={token}
+IAIPES_API_URL=http://developers.iaip.iw.sv
+IAIPES_API_TIMEOUT=30
+```
+**Note:** Replace `{token}` with your developer access token
+
+Run the rest with the next command
 
 ``` bash
 $ composer test
