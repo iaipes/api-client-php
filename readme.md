@@ -52,4 +52,4 @@ license. Please see the [license file](license.md) for more information.
 [link-travis]: https://travis-ci.org/iaipes/apiclient
 [link-styleci]: https://styleci.io/repos/12345678
 [link-author]: https://github.com/iaipes
-[link-contributors]: ./contributors.md]
+[link-contributors]: ./contributors.md
