@@ -17,7 +17,7 @@ class InformationRequestTest extends TestCase
     {
         $client = new InformationRequestClient;
         $index_response = $client->index();
-        if($this->isSuccessfulResponse($index_response)){
+        if($this->isSuccessfulResponse($index_response) && isset($index_response->data[0])){
             $response = $client->show($index_response->data[0]->uuid);
             $this->assertSuccessfulResponse($response);
         }
